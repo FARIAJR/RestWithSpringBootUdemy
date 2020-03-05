@@ -12,7 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import br.com.projects.udemy.java.searalization.converter.YamlJacksonToHttpMessageConverter;
 
 @Configuration
-@EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 	
 	private static final MediaType MEDIA_TYPE_YAML = MediaType.valueOf("application/x-yaml");
