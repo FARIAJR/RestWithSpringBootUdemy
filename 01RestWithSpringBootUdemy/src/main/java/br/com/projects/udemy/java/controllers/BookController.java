@@ -18,7 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projects.udemy.java.data.vo.v1.BookVO;
 import br.com.projects.udemy.java.services.BookService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
+@Api(value="Book endpoint", description = "API BOOK", tags = {"BookEndpoint"})
 @RestController
 @RequestMapping("/api/book/v1")
 public class BookController {
@@ -33,6 +36,7 @@ public class BookController {
 		return persons;
 	}	
 	
+	@ApiOperation(value = "busca de book por id")
 	@GetMapping(value = "/{id}", produces = {"application/json", "application/xml", "application/x-yaml"})
 	public BookVO findById(@PathVariable("id") Long id) {		
 		BookVO personVO = service.findById(id);
